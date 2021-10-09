@@ -5,4 +5,4 @@ git clone https://github.com/JJDSNT/fastAPItest.git
 
 cd fastAPItest
 
-docker-composer up
+docker-compose up
