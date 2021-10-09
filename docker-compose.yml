@@ -5,10 +5,13 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    working_dir: /code/app
+    command: uvicorn main:app --host 0.0.0.0 --port 8008 --reload
     volumes:
       - ./app:/usr/src
     ports:
       - "8008:8008"
     environment:
-      - PORT=8008      
+      - PORT=8008
+      DEBUG: 1
     entrypoint: /start-reload.sh
